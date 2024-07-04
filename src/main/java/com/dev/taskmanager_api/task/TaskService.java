@@ -3,6 +3,7 @@ package com.dev.taskmanager_api.task;
 import com.dev.taskmanager_api.user.User;
 import com.dev.taskmanager_api.user.UserService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,4 +17,9 @@ public class TaskService {
         this.taskRepository = taskRepository;
         this.userService = userService;
     }
+
+//    @Transactional
+//    public Task create(Task task) {
+//
+//    }
 }
