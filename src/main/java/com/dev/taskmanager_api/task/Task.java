@@ -25,14 +25,9 @@ public class Task {
     @UpdateTimestamp(source = SourceType.DB)
     private Date updatedAt;
 
-    public Task(String title, String description, String status) {
-        this.title = title;
-        this.description = description;
-        this.status = status;
-    }
-
-    public Task() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public UUID getId() {
         return id;
@@ -82,4 +77,11 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
